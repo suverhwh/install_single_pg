@@ -129,11 +129,11 @@ case "$num1" in
 		read -p "恢复表结构[s];恢复表数据[a];默认回车以恢复全表:" answer
         case $answer in
         s | S)
-              ${pghome}/bin/pg_restore -s -t ${tblname} -d ${dbname} ${restoredir} -p ${pgport};;
+              ${pghome}/bin/pg_restore -s -d ${dbname} ${restoredir} -p ${pgport};;
         a | A)
-              ${pghome}/bin/pg_restore -a -t ${tblname} -d ${dbname} ${restoredir} -p ${pgport};;
+              ${pghome}/bin/pg_restore -a -d ${dbname} ${restoredir} -p ${pgport};;
         *)
-            ${pghome}/bin/pg_restore -t ${tblname} -d ${dbname} ${restoredir} -p ${pgport};;
+            ${pghome}/bin/pg_restore -d ${dbname} ${restoredir} -p ${pgport};;
         
         esac
 		;;
